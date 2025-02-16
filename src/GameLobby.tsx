@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { db } from "./firebase";
 import { collection, addDoc, doc, setDoc, getDocs } from "firebase/firestore";
 import { nanoid } from "nanoid"; // Pro generování unikátního kódu pro hru
@@ -6,7 +6,6 @@ import { nanoid } from "nanoid"; // Pro generování unikátního kódu pro hru
 function GameLobby() {
   const [playerName, setPlayerName] = useState("");
   const [gameCode, setGameCode] = useState("");
-  const [isCreatingGame, setIsCreatingGame] = useState(false);
 
   const createGame = async () => {
     const newGameCode = nanoid(6); // Vytvoříme unikátní kód pro novou hru
